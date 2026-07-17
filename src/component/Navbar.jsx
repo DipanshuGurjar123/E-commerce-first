@@ -10,11 +10,11 @@ const Navbar = () => {
         <nav className='bg-white shadow-md'>
             <div className='max-w-6xl mx-auto p-5'>
                 <div className='flex justify-between items-center'>
-                    <h1>
-                        E-commerce
+                    <h1 className='font-bold text-2xl'>
+                        DigitalShop 
                     </h1>
 
-                    <ul className='hidden md:flex gap-8 '>
+                    <ul className='hidden md:flex gap-8 md:gap-14 '>
                         <li className='cursor-pointer hover:text-blue-600'>Home</li>
                         <li className='cursor-pointer hover:text-blue-600'>About</li>
                         <li className='cursor-pointer hover:text-blue-600'>Category</li>
