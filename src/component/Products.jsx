@@ -33,7 +33,7 @@ const Products = () => {
                 >
                     
                     <div className='border m-4 rounded-4xl bg-white'>
-                        <img src={product.images}
+                        <img src={product.thumbnail}
                          alt={product.name}
                          className='w-full h-56 object-contain rounded-lg'
                          />
@@ -56,7 +56,7 @@ const Products = () => {
                     </div>
 
                     <div className='px-5 py-2'>
-                       <button className='bg-green-400 w-full rounded-lg p-4'>Buy at Rs. {product.price}</button>
+                       <button className='bg-green-400 w-full rounded-lg p-4 cursor-pointer'>Buy at Rs. {product.price}</button>
                     </div>
                 </div>
             ))}

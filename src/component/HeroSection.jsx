@@ -17,7 +17,7 @@ const HeroSection = () => {
             Describe premium quality products with modern
             design with affordable prices
           </p>
-          <button className='mt-8 bg-green-500 px-7 py-3 rounded-full font-medium'>
+          <button className='mt-8 bg-green-500 px-7 py-3 rounded-full font-medium cursor-pointer'>
             Shop now
           </button>
         </div>

@@ -41,7 +41,7 @@ const ContactUs = () => {
             </div>
 
             {/* Right Section */}
-            <div className='shadow-md p-6 rounded-lg'>
+            <div className='shadow-md p-6 rounded-2xl'>
 
                 <form 
                 className='flex flex-col'

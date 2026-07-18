@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { categoryImages } from '../data/productImages';
+import { useNavigate } from 'react-router';
 
 const SearchByCategory = () => {
-    const [categories, setCategories] = useState([])
+    const [categories, setCategories] = useState([]);
+
+    const navigate = useNavigate()
+
     useEffect(() => {
         axios.get("https://dummyjson.com/products/categories")
             .then(response => {
@@ -41,7 +45,7 @@ const SearchByCategory = () => {
                         return categoryImg.slug === category.slug
                     })
                     return <div key={category.slug}
-                        className='p-4 flex flex-col items-center justify-center border rounded-lg cursor-pointer mx-auto hover:shadow-lg transition-all duration-300 hover:scale-102'
+                        className='p-4 flex flex-col items-center justify-center border rounded-lg mx-auto hover:shadow-lg transition-all duration-300 hover:scale-102'
                     >
                         <img src={categoryImage.image} alt="category image"
                         className='flex items-center justify-center w-56 h-48 bg-transparent object-contain rounded-[50%] border'
@@ -50,6 +54,7 @@ const SearchByCategory = () => {
 
                         <button
                         className='group w-57 h-12 mt-5 border rounded-full flex items-center justify-center bg-black text-white cursor-pointer'
+                        onClick={() => navigate(`/categories/${category.slug}`)}
                         ><span>Explore {category.slug}</span> <span className='transition-transform duration-300 group-hover:translate-x-2 transform text-3xl'>→</span></button>
                     </div>
                 })}
