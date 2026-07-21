@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 
 
 console.log("ProductDetails loaded");
@@ -8,6 +10,7 @@ console.log("ProductDetails loaded");
 
 const ProductDetails = () => {
 
+    const { addToCart } = useContext(CartContext);
     const { id } = useParams();
     // console.log("id is",id)
 
@@ -60,8 +63,14 @@ const ProductDetails = () => {
                              <p className='bg-purple-200 p-2 rounded-lg'>Stock: {product.stock}</p>
                          </div>
 
-                         <div className='px-5 py-2'>
+                         <div className='px-5 py-2 flex flex-col gap-2'>
                              <button className='bg-green-400 w-full rounded-lg p-4 cursor-pointer'>Buy at Rs. {product.price}</button>
+                              <button
+                                onClick={() => addToCart(product)}
+                                className="bg-blue-400 w-full rounded-lg p-4 cursor-pointer hover:bg-blue-500 transition"
+                            >
+                                Add To Cart
+                            </button>
                          </div>
                      </div>
                  ))}

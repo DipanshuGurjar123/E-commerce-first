@@ -8,6 +8,7 @@ import AboutUs from './component/AboutUs'
 import ContactUs from './component/ContactUs'
 import Footer from './component/Footer'
 import ProductDetails from './component/ProductDetails'
+import Cart from "./pages/Cart";
 
 
 
@@ -25,6 +26,7 @@ const App = () => {
         <Route index element={<SearchByCategory />}/>
         <Route path=':id' element={<ProductDetails />}/>
         </Route>
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </div>

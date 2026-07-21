@@ -1,6 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
+import  emailjs  from '@emailjs/browser';
 
 const ContactUs = () => {
+
+    const [fullName, setFullName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+
+ 
+    const sentEmail = (e) => {
+        e.preventDefault();
+
+        const templateParams = {
+            name: fullName,
+            email: email,
+            message: message
+        }
+
+        emailjs.send(
+            "service_sjg0eki",
+            "template_a1pp1i5",
+            templateParams,
+            "ArV7M-Fvd4HQcx7sj"
+        )
+        .then(() => {
+            alert("Email sent successfully")
+            setFullName("")
+            setEmail("")
+            setMessage("")
+        })
+        .catch((error) => {
+            console.log(error);
+            alert("Something went wrong!")    
+        })
+    }
+
   return (
     <section className='max-w-6xl mx-auto px-5 mt-16 mb-12 py-3'>
         <div className='grid md:grid-cols-2 gap-6 pb-14'>
@@ -45,20 +79,33 @@ const ContactUs = () => {
 
                 <form 
                 className='flex flex-col'
+                onSubmit={sentEmail}
                 >
                     <label className='font-semibold'>Full Name</label>
                     <input type="text"
                     placeholder='Enter your name'
+                    value={fullName}
+                    onChange={(e) => {
+                        setFullName(e.target.value)
+                    }}
                     className='border rounded-lg p-3'
                     /> <br />
                     <label className='font-semibold'>Email</label>
                     <input type="text"
                     placeholder='Enter your email'
+                    value={email}
+                    onChange={(e) => {
+                        setEmail(e.target.value)
+                    }}
                     className='border rounded-lg p-3'
                     /> <br />
                     <label className='font-semibold'>Message</label>
                     <textarea name="" id=""
                     placeholder='Message.....'
+                    value={message}
+                    onChange={(e) => {
+                        setMessage(e.target.value)
+                    }}
                     className='border rounded-lg p-6'
                     ></textarea><br />
                     <button className='bg-black text-white p-3 rounded-lg'>Sent Message</button>
