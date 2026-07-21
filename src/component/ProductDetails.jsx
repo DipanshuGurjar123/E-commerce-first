@@ -10,6 +10,7 @@ console.log("ProductDetails loaded");
 
 const ProductDetails = () => {
 
+    const [loading, setLoading] = useState(true)
     const { addToCart } = useContext(CartContext);
     const { id } = useParams();
     // console.log("id is",id)
@@ -17,6 +18,7 @@ const ProductDetails = () => {
     const [categoryProducts, setCategoryProducts] = useState([]);
 
     useEffect(() => {
+        setLoading(true)
         console.log("id", id);
         
         axios.get(`https://dummyjson.com/products/category/${id}`)
@@ -27,6 +29,9 @@ const ProductDetails = () => {
             .catch((error) => {
                 console.log("Error", error)
             })
+            .finally(() => {
+                setLoading(false)
+            })
     }, [id])
 
     return (
@@ -34,6 +39,18 @@ const ProductDetails = () => {
 
             <h1 className='font-bold text-2xl'> All available {id} items</h1>
 
+            {loading ? (
+                <div className="flex flex-col justify-center items-center h-[70vh]">
+                    <div className="relative w-14 h-14">
+                        <div className="absolute inset-0 rounded-full border-4 border-gray-200"></div>
+                        <div className="absolute inset-0 rounded-full border-4 border-blue-600 border-t-transparent animate-spin"></div>
+                    </div>
+
+                    <p className="mt-4 text-gray-600 font-medium animate-pulse">
+                        Loading Products...
+                    </p>
+                </div>
+            ) : (
          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 pt-8 pb-8'>
                  {categoryProducts.map((product) => (
                     <div key={product.id}
@@ -75,6 +92,8 @@ const ProductDetails = () => {
                      </div>
                  ))}
              </div> 
+
+                )}
         </section>
     )
 }
