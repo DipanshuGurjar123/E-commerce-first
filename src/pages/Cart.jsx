@@ -22,11 +22,11 @@ const Cart = () => {
     <section className="max-w-6xl mx-auto px-5 py-10 bg-stone-50 rounded-lg">
       <h1 className="text-3xl font-bold mb-8">Shopping Cart</h1>
 
-      <div className="space-y-6">
+      <div className="space-y-6 ">
         {cart.map((item) => (
           <div
             key={item.id}
-            className="flex items-center justify-between border rounded-xl p-5 shadow"
+            className="flex flex-col sm:flex-row sm:items-center items-center justify-between border rounded-xl p-5 shadow"
           >
             {/* Left */}
             <div className="flex items-center gap-5">
@@ -50,13 +50,13 @@ const Cart = () => {
             </div>
 
             {/* Right */}
-            <div className="flex flex-col items-center gap-3">
+            <div className="flex flex-col items-center gap-3 pt-3">
 
               {/* Quantity */}
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => decreaseQuantity(item.id)}
-                  className="bg-red-500 text-white w-10 h-10 rounded-lg text-xl"
+                  className="bg-red-500 text-white w-10 h-10 rounded-lg sm:text-lg text-xl"
                 >
                   -
                 </button>
@@ -86,12 +86,12 @@ const Cart = () => {
       </div>
 
       {/* Total */}
-      <div className="mt-10 border-t pt-6 flex justify-between items-center">
+      <div className="mt-10 border-t pt-6 flex sm:flex-col justify-between items-center">
         <h2 className="text-3xl font-bold">
           Total : ₹ {totalPrice}
         </h2>
 
-        <button className="bg-blue-600 text-white px-8 py-3 rounded-lg">
+        <button className="hidden bg-blue-600 text-white px-8 py-3 rounded-lg">
           Checkout
         </button>
       </div>
