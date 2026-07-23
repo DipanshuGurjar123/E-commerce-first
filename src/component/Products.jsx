@@ -25,7 +25,7 @@ const Products = () => {
 
 
     return (
-        <section className='max-w-6xl mx-auto px-5 mt-12 py-3'>
+        <section className='max-w-6xl mx-auto px-5 mt-12 py-3 bg-stone-50 rounded-lg'>
 
             <div>
                 <h2 className='font-bold text-2xl '>Featured Products</h2>

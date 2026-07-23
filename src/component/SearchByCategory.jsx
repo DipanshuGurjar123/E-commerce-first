@@ -42,7 +42,7 @@ const SearchByCategory = () => {
 
 
     return (
-        <div className='max-w-6xl mx-auto px-5 mt-12'>
+        <div className='max-w-6xl mx-auto px-5 mt-12 bg-stone-50 rounded-lg'>
             <h1 className='pt-5 pb-8 text-2xl font-bold'>Search By Category</h1>
             {loading ? (
                 <div className="flex flex-col justify-center items-center h-[70vh]">

@@ -5,7 +5,7 @@ const ProductCard = ({ product }) => {
   const { addToCart } = useContext(CartContext);
 
   return (
-    <div className="border rounded-xl p-4 shadow hover:shadow-lg transition duration-300">
+    <div className="border rounded-xl px-4 py-4 shadow hover:shadow-lg transition duration-300 bg-stone-50 rounded-lg">
       {/* Product Image */}
       <img
         src={product.thumbnail}

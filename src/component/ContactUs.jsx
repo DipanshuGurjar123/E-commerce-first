@@ -41,7 +41,7 @@ const ContactUs = () => {
 
             {/* Left Section */}
             <div className='bg-gray-100 px-6 py-5 rounded-2xl'>
-                <h1 className='font-bold px-2'>Contact With Us</h1>
+                <h1 className='font-bold px-2 text-lg'>Contact With Us</h1>
 
                 <div className='flex flex-2 gap-2 pt-4 leading-tight'>
                     <div>
@@ -108,7 +108,7 @@ const ContactUs = () => {
                     }}
                     className='border rounded-lg p-6'
                     ></textarea><br />
-                    <button className='bg-black text-white p-3 rounded-lg'>Sent Message</button>
+                    <button className='bg-indigo-300 hover:bg-indigo-500 transition-all duration-300 text-black p-3 rounded-lg cursor-pointer'>Sent Message</button>
                 </form>
             </div>
         </div>

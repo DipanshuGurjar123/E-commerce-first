@@ -12,7 +12,7 @@ const Navbar = () => {
     const { totalItems } = useContext(CartContext);
 
     return (
-        <nav className='bg-white shadow-md'>
+        <nav className='bg-slate-50 shadow-md sticky top-0 w-full z-50 shadow'>
             <div className='max-w-6xl mx-auto p-5'>
                 <div className='flex justify-between items-center'>
                     <Link to='/'>
@@ -53,8 +53,10 @@ const Navbar = () => {
                     <div className='md:hidden mt-2 p-5 rounded-lg bg-transparent'>
                         <ul className='flex flex-col gap-5 font-medium'>
                             <li className='cursor-pointer hover:text-blue-600'>Home</li>
-                            <li className='cursor-pointer hover:text-blue-600'>About</li>
                             <li className='cursor-pointer hover:text-blue-600'>Category</li>
+                            <li className='cursor-pointer hover:text-blue-600'>Products</li>
+                            <li className='cursor-pointer hover:text-blue-600'>About</li>
+                            <li className='cursor-pointer hover:text-blue-600'>Contact</li>
                         </ul>
                     </div>
                 )}

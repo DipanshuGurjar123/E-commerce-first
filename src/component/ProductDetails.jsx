@@ -35,7 +35,7 @@ const ProductDetails = () => {
     }, [id])
 
     return (
-        <section className='max-w-6xl mx-auto px-5 mt-12'>
+        <section className='max-w-6xl mx-auto px-5 mt-12 bg-stone-50 rounded-lg'>
 
             <h1 className='font-bold text-2xl'> All available {id} items</h1>
 
