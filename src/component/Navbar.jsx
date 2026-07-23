@@ -51,11 +51,26 @@ const Navbar = () => {
                 {menuOpen && (
                     <div className='md:hidden mt-2 p-5 rounded-lg bg-transparent'>
                         <ul className='flex flex-col gap-5 font-medium'>
-                            <li><Link to='/' className='cursor-pointer hover:text-blue-600'>Home</Link></li>
-                            <li><Link to='categories' className='cursor-pointer hover:text-blue-600'>Category</Link></li>
-                            <li><Link to='products' className='cursor-pointer hover:text-blue-600'>Products</Link></li>
-                            <li><Link to='about' className='cursor-pointer hover:text-blue-600'>About</Link></li>
-                            <li><Link to='contact' className='cursor-pointer hover:text-blue-600'>Contact</Link></li>
+                            <li><Link to='/' 
+                            className='cursor-pointer hover:text-blue-600'
+                            onClick={() => setMenuOpen(false)}
+                            >Home</Link></li>
+                            <li><Link to='categories' 
+                            className='cursor-pointer hover:text-blue-600'
+                            onClick={() => setMenuOpen(false)}
+                            >Category</Link></li>
+                            <li><Link to='products'
+                             className='cursor-pointer hover:text-blue-600'
+                             onClick={() => setMenuOpen(false)}
+                             >Products</Link></li>
+                            <li><Link to='about'
+                             className='cursor-pointer hover:text-blue-600'
+                             onClick={() => setMenuOpen(false)}
+                             >About</Link></li>
+                            <li><Link to='contact'
+                             className='cursor-pointer hover:text-blue-600'
+                             onClick={() => setMenuOpen(false)}
+                             >Contact</Link></li>
                             <li><Link to="/cart"
                                 className='cursor-pointer hover:text-blue-600'
                                 onClick={() => setMenuOpen(false)}
